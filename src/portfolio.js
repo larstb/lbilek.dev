@@ -119,10 +119,13 @@ const workExperiences = {
       company: "RISE GmbH",
       companylogo: require("./assets/images/riseLogo.png"),
       date: "04/2023 – Present",
-      desc: "Developing a webshop platform for TI products using Angular (frontend), Java (backend), and PostgreSQL.",
+      desc: "Working on various software solutions in the eHealth sector, with a focus on modern web development and automation.",
       descBullets: [
-        "Automating workflows such as billing, status management, and appointment scheduling",
-        "Improving service provider and customer interactions"
+        "Frontend development using Angular and TypeScript",
+        "Backend implementation with Java and Spring Boot",
+        "Database modeling with PostgreSQL",
+        "CI/CD and containerization using Docker and Kubernetes",
+        "Contributions to e-medical platforms and digital health applications"
       ]
     },
     {
