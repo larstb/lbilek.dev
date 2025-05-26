@@ -1,9 +1,9 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .meter {
   height: 20px;
   position: relative;
-  background: $progressBarBackground;
+  background: globalColors.$progressBarBackground;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   border-radius: 25px;
@@ -11,32 +11,32 @@
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+  border-radius: 20px 6px 6px 20px;
+  background-color: globalColors.$progressBarSpanBG;
   position: relative;
   overflow: hidden;
 }
 .skill {
   line-height: 3.5vw;
 }
+
 .skill-bars {
   font-size: 28px;
   width: 40%;
 }
+
 .skills-container {
   display: flex;
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
 }
+
 .skills-container > * {
   flex: 1;
   margin-bottom: 30px;
 }
+
 .skills-image > img {
   margin-left: 80px;
   max-width: 90%;

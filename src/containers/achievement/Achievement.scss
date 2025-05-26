@@ -1,18 +1,17 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .achievement-heading {
   font-size: 56px;
   font-weight: 400;
   line-height: normal;
-  margin: 0px;
+  margin: 0;
 }
 .achievement-subtitle {
   text-transform: uppercase;
-  margin: 0px;
-  margin-bottom: 50px;
+  margin: 0 0 50px;
 }
 .subTitle {
-  color: $subTitle;
+  color: globalColors.$subTitle;
 }
 
 /* Media Query */

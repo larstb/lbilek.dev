@@ -1,16 +1,14 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
+  margin: 4rem auto 0;
 }
 .greet-main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
 }
 
 .greeting-main {
@@ -18,7 +16,7 @@
 }
 
 .subTitle {
-  color: $subTitle !important;
+  color: globalColors.$subTitle !important;
 }
 
 .greeting-main {
@@ -45,7 +43,7 @@
 .greeting-text {
   font-size: 70px;
   line-height: 1.1;
-  color: $textColor !important;
+  color: globalColors.$textColor !important;
 }
 
 .greeting-text-p {

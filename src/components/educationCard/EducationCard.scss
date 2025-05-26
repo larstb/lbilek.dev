@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .education-card {
   display: flex;
@@ -6,7 +6,7 @@
 }
 
 .education-card:hover + .education-card-border {
-  border-color: $educationCardBorder;
+  border-color: globalColors.$educationCardBorder;
   width: 100%;
   -webkit-transition: width 0.6s ease-in-out;
   -moz-transition: width 0.6s ease-in-out;
@@ -17,7 +17,7 @@
 .education-card-border {
   height: 30px;
   width: 80%;
-  border-top: 2px solid $lightBorder1;
+  border-top: 2px solid globalColors.$lightBorder1;
   margin-bottom: 20px;
   -webkit-transition: width 0.6s ease-in-out;
   -moz-transition: width 0.6s ease-in-out;
@@ -45,7 +45,7 @@
   margin-right: 2rem;
   width: 6rem;
   height: 6rem;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
+  box-shadow: 0 0.5rem 1rem globalColors.$lightBoxShadowDarker;
   border-radius: 50%;
 }
 
@@ -54,18 +54,18 @@
 }
 
 .education-text-subHeader {
-  color: $textColor;
+  color: globalColors.$textColor;
   font-weight: 700;
   font-size: 19px;
-  margin: 0px;
+  margin: 0;
   padding-top: 0.8rem;
   line-height: normal;
 }
 
 .education-text-duration {
-  color: $titleColor;
+  color: globalColors.$titleColor;
   font-size: 19px;
-  margin: 0px;
+  margin: 0;
   padding-top: 0.5rem;
 }
 
@@ -106,7 +106,7 @@
     width: 4rem;
     height: 4rem;
     margin-bottom: 0.5rem;
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 

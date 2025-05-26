@@ -1,11 +1,11 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .dev-icons {
   padding-left: 0;
   list-style: none;
   font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
   text-align: center;
 }
 
@@ -16,16 +16,16 @@
 }
 
 .software-skill-inline > i {
-  color: $subTitle;
+  color: globalColors.$subTitle;
 }
 
 .software-skill-inline > i:hover {
-  color: $skillsColor;
+  color: globalColors.$skillsColor;
 }
 .software-skill-inline > p {
-  color: $subTitle;
+  color: globalColors.$subTitle;
   font-size: 10px;
 }
 .software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+  color: globalColors.$skillsColor;
 }

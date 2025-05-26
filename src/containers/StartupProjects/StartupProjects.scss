@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as globalColors;
 
 .card-image {
   max-width: 100%;
@@ -6,35 +6,35 @@
   width: 250px;
 }
 .card-title {
-  color: $titleColor;
+  color: globalColors.$titleColor;
   font-size: 22px;
   line-height: 24px;
   font-weight: 700;
   margin: 15px 0 0 0;
 }
 .card-subtitle {
-  color: $cardSubtitle;
+  color: globalColors.$cardSubtitle;
   font-size: 17px;
   line-height: 1.5rem;
 }
 .project-card {
   display: flex;
   flex-direction: column;
-  background-color: $lightBackground2;
+  background-color: globalColors.$lightBackground2;
   padding: 1.5rem;
   border-radius: 10px;
-  border: 1px solid $lightBorder1;
+  border: 1px solid globalColors.$lightBorder1;
   justify-content: center;
 }
 .project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+  box-shadow: globalColors.$lightBoxShadowDark 0 10px 30px -15px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+  box-shadow: 0px 10px 30px -15px globalColors.$darkBoxShadow;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.25s ease;
@@ -44,10 +44,10 @@
   text-align: center;
 }
 .project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  box-shadow: globalColors.$lightBoxShadowDark 0 20px 30px -10px;
 }
 .project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+  box-shadow: 0 20px 30px -10px globalColors.$darkBoxShadow;
 }
 .project-image {
   position: relative;
@@ -65,8 +65,8 @@
 }
 
 .project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
+  background: globalColors.$buttonColor;
+  color: globalColors.$lightBackground3;
   vertical-align: middle;
   align-items: center;
   border-radius: 4px;
