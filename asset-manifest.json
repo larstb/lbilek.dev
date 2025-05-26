@@ -1,34 +1,42 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c9afc7d.css",
-    "main.js": "/static/js/main.d1fa33a7.js",
+    "main.css": "/static/css/main.07d9e55a.css",
+    "main.js": "/static/js/main.3b06822c.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
-    "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
+    "static/js/64.991fbbb6.chunk.js": "/static/js/64.991fbbb6.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
-    "static/js/769.4a658564.chunk.js": "/static/js/769.4a658564.chunk.js",
+    "static/js/769.1782cfa1.chunk.js": "/static/js/769.1782cfa1.chunk.js",
     "static/media/bsevitaLogo.png": "/static/media/bsevitaLogo.e293d249dc3bb58886bd.png",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/manOnTable.svg": "/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
     "static/media/contactMailDark.svg": "/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
     "static/media/developerActivity.svg": "/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/austrianStandardsLogo.png": "/static/media/austrianStandardsLogo.73d159b674820c90b9d2.png",
     "static/media/socialInsurance.png": "/static/media/socialInsurance.f69260735643323b7dcd.png",
     "static/media/riseLogo.png": "/static/media/riseLogo.110a0903930f8c85904e.png",
     "static/media/htlspengergasseLogo.png": "/static/media/htlspengergasseLogo.161fa0676f1712e8ead0.png",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/skill.svg": "/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "static/media/resume.pdf": "/static/media/resume.31d6cfe0d16ae931b73c.pdf",
-    "main.9c9afc7d.css.map": "/static/css/main.9c9afc7d.css.map",
-    "main.d1fa33a7.js.map": "/static/js/main.d1fa33a7.js.map",
+    "main.07d9e55a.css.map": "/static/css/main.07d9e55a.css.map",
+    "main.3b06822c.js.map": "/static/js/main.3b06822c.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
-    "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
+    "64.991fbbb6.chunk.js.map": "/static/js/64.991fbbb6.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
-    "769.4a658564.chunk.js.map": "/static/js/769.4a658564.chunk.js.map"
+    "769.1782cfa1.chunk.js.map": "/static/js/769.1782cfa1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c9afc7d.css",
-    "static/js/main.d1fa33a7.js"
+    "static/css/main.07d9e55a.css",
+    "static/js/main.3b06822c.js"
   ]
 }
