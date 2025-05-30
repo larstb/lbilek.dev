@@ -30,7 +30,7 @@ export default function EducationCard({school}) {
                 ref={imgRef}
                 className="education-roundedimg"
                 src={school.logo}
-                alt={school.schoolName}
+                alt=""
               />
             </div>
           )}
