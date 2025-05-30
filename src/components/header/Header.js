@@ -38,6 +38,7 @@ function Header() {
           className="menu-icon"
           htmlFor="menu-btn"
           style={{color: "white"}}
+          aria-label="Toggle light or dark mode"
         >
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
