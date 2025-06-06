@@ -17,7 +17,7 @@ export default function Skills() {
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">
-            {illustration.animated ? (
+            {illustration.animatedSkills ? (
               <DisplayLottie animationData={codingPerson} />
             ) : (
               <img

@@ -56,7 +56,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="contact-image-div">
-            {illustration.animated ? (
+            {illustration.animatedContact ? (
               <DisplayLottie animationData={email} />
             ) : (
               <img
