@@ -1,2 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt für Lars-Thorsten Bilek Portfolio
+
 User-agent: *
+Allow: /
+
+Sitemap: https://lbilek.dev/sitemap.xml
