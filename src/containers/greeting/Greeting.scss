@@ -57,8 +57,12 @@
 }
 
 .greeting-image-div > img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto !important;
+
+  @media (max-width: 1000px) {
+    max-width: 100%;
+  }
 }
 
 .wave-emoji {
