@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {createRef, useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
@@ -10,6 +10,8 @@ import {illustration, greeting, contactInfo} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
+  const imgRef = createRef();
+
   const {isDark} = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;
@@ -59,8 +61,11 @@ export default function Greeting() {
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
+                alt="developer greeting illustration"
+                src={illustration.staticGreeting}
+                crossOrigin={"anonymous"}
+                ref={imgRef}
+                className="static-image"
               ></img>
             )}
           </div>

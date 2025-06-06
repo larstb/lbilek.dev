@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {createRef, useContext} from "react";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import {illustration, skillsSection} from "../../portfolio";
@@ -8,6 +8,8 @@ import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Skills() {
+  const imgRef = createRef();
+
   const {isDark} = useContext(StyleContext);
   if (!skillsSection.display) {
     return null;
@@ -22,7 +24,9 @@ export default function Skills() {
             ) : (
               <img
                 alt="Man Working"
-                src={require("../../assets/images/developerActivity.svg")}
+                src={illustration.staticSkill}
+                ref={imgRef}
+                className="static-image"
               ></img>
             )}
           </div>

@@ -19,7 +19,9 @@ const illustration = {
   animatedContact: true,
   animatedGreeting: false,
   animatedSkills: false,
-  animatedSkillProgress: true
+  animatedSkillProgress: true,
+  staticGreeting: require("./assets/images/programmer-amico.png"),
+  staticSkill: require("./assets/images/developer-activity-pana.png")
 };
 
 const greeting = {
