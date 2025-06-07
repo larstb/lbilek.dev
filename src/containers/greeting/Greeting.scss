@@ -60,6 +60,10 @@
   max-width: 80%;
   height: auto !important;
 
+  @media (min-width: 2000px) {
+    max-width: 65%;
+  }
+
   @media (max-width: 1000px) {
     max-width: 100%;
   }
