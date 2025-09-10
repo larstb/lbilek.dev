@@ -27,4 +27,4 @@ jobs:
         run: |
           npm install
           npm run build
-          npm run ng -- deploy
+          npm run ng -- deploy --email=${{ secrets.EMAIL }} --name=${{ secrets.NAME}}
