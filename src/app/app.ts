@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {WelcomeAnimation} from './welcome-animation/welcome-animation';
+import {environment} from '../../environment';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [RouterOutlet, WelcomeAnimation],
+  templateUrl: './app.html'
 })
 export class App {
-  protected readonly title = signal('lbilek-dev');
+  showSplash = environment.showSplashAnimation;
+
+  onSplashFinished() {
+    this.showSplash = false;
+  }
 }
