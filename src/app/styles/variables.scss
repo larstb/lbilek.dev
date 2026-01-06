@@ -1,0 +1,61 @@
+:root {
+  /* ===================== */
+  /* Material Color Roles  */
+  /* ===================== */
+
+  /* Primary */
+  --md-primary: #2563eb;
+  --md-on-primary: #ffffff;
+  --md-primary-container: #1e40af;
+  --md-on-primary-container: #dbeafe;
+
+  /* Secondary */
+  --md-secondary: #38bdf8;
+  --md-on-secondary: #020617;
+  --md-secondary-container: #075985;
+  --md-on-secondary-container: #e0f2fe;
+
+  /* Tertiary (optional accent) */
+  --md-tertiary: #22c55e;
+  --md-on-tertiary: #052e16;
+
+  /* ===================== */
+  /* Surface & Background  */
+  /* ===================== */
+
+  --md-background: #020617;
+  --md-on-background: #f9fafb;
+
+  --md-surface: #020617;
+  --md-surface-1: #0f172a; /* cards */
+  --md-surface-2: #111827; /* elevated cards */
+  --md-surface-3: #1e293b;
+
+  --md-on-surface: #f9fafb;
+  --md-on-surface-variant: #9ca3af;
+
+  /* ===================== */
+  /* Outline & Divider     */
+  /* ===================== */
+
+  --md-outline: #1e293b;
+  --md-outline-variant: #334155;
+
+  /* ===================== */
+  /* State Colors          */
+  /* ===================== */
+
+  --md-error: #ef4444;
+  --md-on-error: #ffffff;
+
+  --md-success: #22c55e;
+  --md-warning: #f59e0b;
+
+  /* ===================== */
+  /* Elevation Shadows     */
+  /* ===================== */
+
+  --md-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --md-shadow-2: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --md-shadow-3: 0 10px 25px rgba(0, 0, 0, 0.6);
+}

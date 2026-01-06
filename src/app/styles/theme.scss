@@ -4,31 +4,54 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@use 'sass:map';
+@include mat.core();
 
 html {
+  $palettes: (
+    primary: (
+      0:   #000000,
+      10:  #0b1b4d,
+      20:  #142f8a,
+      25:  #1a3aa6,
+      30:  #1e40af,
+      35:  #2147c5,
+      40:  #2563eb,
+      50:  #4f7df3,
+      60:  #7aa2f7,
+      70:  #a5c3fb,
+      80:  #c7dbfd,
+      90:  #dbeafe,
+      95:  #eff6ff,
+      98:  #f8fbff,
+      99:  #f8fbff,
+      100: #ffffff,
+    )
+  );
+
   @include mat.theme((
     color: (
-      primary: mat.$magenta-palette,
-      tertiary: mat.$violet-palette,
+      theme-type: dark,
+      primary: map.merge(map.get($palettes, primary), mat.$blue-palette),
+      use-system-variables: false
     ),
-    typography: Roboto,
-    density: 0,
+    typography: (
+      use-system-variables: false,
+      brand-family: Roboto,
+      plain-family: Roboto,
+    ),
+    density: -2,
   ));
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
+  color-scheme: dark;
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--md-background);
+  color: var(--md-on-background);
+}
+
+ html, body {
+  height: 100%;
 }

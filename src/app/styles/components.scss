@@ -1,0 +1,16 @@
+.card {
+  background: var(--md-surface-1);
+  color: var(--md-on-surface);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--md-shadow-1);
+}
+
+a {
+  color: var(--md-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
