@@ -1,4 +1,5 @@
-import { DOCUMENT, Injectable, effect, inject, signal } from '@angular/core';
+import { DOCUMENT, Injectable, PLATFORM_ID, effect, inject, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { portfolio } from '../config/portfolio.config';
 import { ThemeMode } from '../config/portfolio.model';
 
@@ -7,16 +8,22 @@ const STORAGE_KEY = 'theme-mode';
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  /** Stored choice from sessionStorage, falling back to the system preference. */
-  readonly mode = signal<ThemeMode>(this.readStoredMode() ?? this.systemMode());
+  /**
+   * Stored choice from sessionStorage, falling back to the system preference.
+   * While prerendering there is neither, so the static HTML follows the system theme via CSS.
+   */
+  readonly mode = signal<ThemeMode>(this.isBrowser ? (this.readStoredMode() ?? this.systemMode()) : 'light');
 
   constructor() {
     this.applyAccent();
 
-    effect(() => {
-      this.document.documentElement.setAttribute('data-theme', this.mode());
-    });
+    if (this.isBrowser) {
+      effect(() => {
+        this.document.documentElement.setAttribute('data-theme', this.mode());
+      });
+    }
   }
 
   /** Switches between light and dark and remembers the choice for this session. */

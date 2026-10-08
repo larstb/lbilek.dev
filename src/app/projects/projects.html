@@ -12,7 +12,7 @@
             <img class="media" [src]="project.image" [alt]="project.imageAlt ?? project.title" loading="lazy" />
           } @else if (section.showImagePlaceholder) {
             <div class="media placeholder" aria-hidden="true">
-              <mat-icon>code</mat-icon>
+              <mat-icon svgIcon="code" />
             </div>
           }
 
@@ -32,11 +32,7 @@
               <div class="links">
                 @for (link of project.links; track link.url) {
                   <a [href]="link.url" target="_blank" rel="noopener">
-                    @if (link.svgIcon) {
-                      <mat-icon [svgIcon]="link.svgIcon" />
-                    } @else {
-                      <mat-icon>{{ link.icon ?? 'open_in_new' }}</mat-icon>
-                    }
+                    <mat-icon [svgIcon]="link.icon ?? 'open_in_new'" />
                     {{ link.label }}
                   </a>
                 }

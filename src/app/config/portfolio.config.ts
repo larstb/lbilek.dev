@@ -6,6 +6,7 @@ export const portfolio: PortfolioConfig = {
   animation: {
     showSplashAnimation: true,
     splashAnimationDuration: 2000,
+    splashOncePerSession: false,
   },
 
   theme: {
@@ -27,6 +28,7 @@ export const portfolio: PortfolioConfig = {
       avatarAlt: 'Portrait of Lars-Thorsten Bilek',
       avatar: 'images/avatar.jpg',
       actions: [{ label: 'View My Experience', url: '#experience' }],
+      showSocials: true,
     },
 
     experience: {
@@ -34,6 +36,7 @@ export const portfolio: PortfolioConfig = {
       title: 'Work Experience',
       navLabel: 'Experience',
       icon: 'work',
+      layout: 'single',
       entries: [
         {
           role: 'Full-Stack Developer',
@@ -149,11 +152,22 @@ export const portfolio: PortfolioConfig = {
     },
 
     projects: {
-      enabled: false,
+      enabled: true,
       title: 'Featured Projects',
       navLabel: 'Projects',
       showImagePlaceholder: true,
-      items: [],
+      items: [
+        {
+          title: 'lbilek.dev - Developer Portfolio',
+          description:
+            'This website: a single-page Angular app driven by one typed config file, with light and dark themes, ' +
+            'prerendered at build time and deployed to GitHub Pages with GitHub Actions.',
+          image: 'images/projects/portfolio.jpg',
+          imageAlt: 'Screenshot of the portfolio website',
+          tags: ['Angular', 'TypeScript', 'SCSS', 'GitHub Actions'],
+          links: [{ label: 'Source code', url: 'https://github.com/larstb/lbilek.dev', icon: 'github' }],
+        },
+      ],
     },
 
     contact: {
@@ -167,11 +181,9 @@ export const portfolio: PortfolioConfig = {
 
   footer: {
     socials: [
-      { label: 'GitHub', url: 'https://github.com/larstb', svgIcon: 'github' },
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lars-thorsten-bilek/', svgIcon: 'linkedin' },
+      { label: 'GitHub', url: 'https://github.com/larstb', icon: 'github' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lars-thorsten-bilek/', icon: 'linkedin' },
       { label: 'Email', url: 'mailto:lbilek.dev@gmail.com', icon: 'mail' },
-      { label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100008249610930', svgIcon: 'facebook' },
-      { label: 'Instagram', url: 'https://www.instagram.com/ltb_2001/', svgIcon: 'instagram' },
     ],
     copyright: '© {year} Lars-Thorsten Bilek. All rights reserved.',
   },

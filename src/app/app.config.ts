@@ -3,8 +3,8 @@ import {
   provideZonelessChangeDetection
 } from '@angular/core';
 import {provideLottieOptions} from 'ngx-lottie';
-import player from 'lottie-web';
 import {provideIcons} from './core/icons';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +12,8 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideIcons(),
     provideLottieOptions({
-      player: () => player,
-    }),
+      // Loaded lazily, only when the splash animation is actually shown.
+      player: () => import('lottie-web'),
+    }), provideClientHydration(),
   ]
 };

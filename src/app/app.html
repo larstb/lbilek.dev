@@ -1,18 +1,20 @@
-@if (showSplash()) {
-  <app-welcome-animation (finished)="onSplashFinished()"></app-welcome-animation>
-} @else {
-  <app-header />
-  <main>
-    @for (section of sections; track section) {
-      @switch (section) {
-        @case ('about') { <app-hero /> }
-        @case ('experience') { <app-experience sectionId="experience" /> }
-        @case ('education') { <app-experience sectionId="education" /> }
-        @case ('skills') { <app-skills /> }
-        @case ('projects') { <app-projects /> }
-        @case ('contact') { <app-contact /> }
-      }
+<app-header />
+<main>
+  @for (section of sections; track section) {
+    @switch (section) {
+      @case ('about') { <app-hero /> }
+      @case ('experience') { <app-experience appReveal sectionId="experience" /> }
+      @case ('education') { <app-experience appReveal sectionId="education" /> }
+      @case ('skills') { <app-skills appReveal /> }
+      @case ('projects') { <app-projects appReveal /> }
+      @case ('contact') { <app-contact appReveal /> }
     }
-  </main>
-  <app-footer />
+  }
+</main>
+<app-footer />
+
+@if (showSplash()) {
+  @defer (on immediate) {
+    <app-welcome-animation (finished)="onSplashFinished()" />
+  }
 }

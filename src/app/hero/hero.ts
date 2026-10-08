@@ -10,6 +10,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class Hero {
   protected readonly hero = portfolio.sections.about;
+  protected readonly socials = this.hero.showSocials ? portfolio.footer.socials : [];
 
   protected readonly initials = portfolio.name
     .split(/[\s-]+/)

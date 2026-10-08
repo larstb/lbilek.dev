@@ -7,7 +7,14 @@
 
     <nav class="nav" [class.open]="menuOpen()" aria-label="Main navigation" id="main-nav">
       @for (item of navItems; track item.href) {
-        <a class="nav-link" [href]="item.href" (click)="menuOpen.set(false)">{{ item.label }}</a>
+        <a
+          class="nav-link"
+          [class.active]="activeId() === item.id"
+          [attr.aria-current]="activeId() === item.id ? 'location' : null"
+          [href]="item.href"
+          (click)="menuOpen.set(false)"
+          >{{ item.label }}</a
+        >
       }
     </nav>
 
@@ -20,7 +27,7 @@
           [attr.aria-label]="themeLabel()"
           [title]="themeLabel()"
         >
-          <mat-icon>{{ themeIcon() }}</mat-icon>
+          <mat-icon [svgIcon]="themeIcon()" />
         </button>
       }
       @if (portfolio.sections.contact.enabled) {
@@ -34,7 +41,7 @@
         aria-controls="main-nav"
         aria-label="Toggle navigation"
       >
-        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+        <mat-icon [svgIcon]="menuOpen() ? 'close' : 'menu'" />
       </button>
     </div>
   </div>

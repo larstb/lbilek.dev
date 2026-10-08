@@ -49,7 +49,8 @@ html {
 
   --font-sans: 'Inter', sans-serif;
 
-  --color-primary: light-dark(#2563eb, #3b82f6);
+  // Same blue in both themes: white button text on it meets WCAG AA (5.2:1).
+  --color-primary: #2563eb;
   --color-primary-hover: color-mix(in srgb, var(--color-primary) 85%, black);
   --color-primary-soft: color-mix(in srgb, var(--color-primary) 14%, transparent);
   --color-primary-text: light-dark(

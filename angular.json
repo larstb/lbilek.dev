@@ -31,10 +31,17 @@
             ],
             "stylePreprocessorOptions": {
               "sass": {
-                "silenceDeprecations": ["import"]
+                "silenceDeprecations": [
+                  "import"
+                ]
               }
             },
-            "outputPath": "dist/lbilek-dev"
+            "allowedCommonJsDependencies": [
+              "lottie-web"
+            ],
+            "outputPath": "dist/lbilek-dev",
+            "server": "src/main.server.ts",
+            "outputMode": "static"
           },
           "configurations": {
             "production": {

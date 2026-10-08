@@ -6,11 +6,11 @@
       <p class="section-subtitle muted">{{ s.subtitle }}</p>
     }
 
-    <ol class="timeline">
+    <ol class="timeline" [class.single]="s.layout === 'single'">
       @for (entry of s.entries; track $index; let odd = $odd) {
         <li class="timeline-item" [class.left]="odd">
           <span class="marker">
-            <mat-icon>{{ entry.icon ?? s.icon ?? 'work' }}</mat-icon>
+            <mat-icon [svgIcon]="entry.icon ?? s.icon ?? 'work'" />
           </span>
 
           <article class="card entry">

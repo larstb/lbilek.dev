@@ -172,3 +172,47 @@ p {
     }
   }
 }
+
+// Single column layout on desktop too: line and markers on the left, cards full width.
+@media (min-width: 768px) {
+  .timeline.single {
+    &::before {
+      left: calc($marker-size / 2);
+    }
+
+    .timeline-item {
+      grid-template-columns: $marker-size 1fr;
+      column-gap: 1.25rem;
+      align-items: start;
+
+      & + .timeline-item {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .marker {
+      grid-column: 1;
+      margin-top: 1rem;
+    }
+
+    .entry,
+    .left .entry {
+      grid-column: 2;
+      text-align: left;
+    }
+
+    .left .highlights li {
+      padding-left: 0.9rem;
+      padding-right: 0;
+
+      &::before {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    .left .tech {
+      justify-content: flex-start;
+    }
+  }
+}

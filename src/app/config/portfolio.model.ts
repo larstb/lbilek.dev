@@ -1,7 +1,4 @@
-import { SVG_ICONS } from '../core/icons';
-
-/** Brand icon registered from `public/icons`, used via `<mat-icon svgIcon>`. */
-export type SvgIconName = (typeof SVG_ICONS)[number];
+import { IconName } from '../core/icons';
 
 export type ThemeMode = 'light' | 'dark';
 
@@ -12,10 +9,8 @@ export interface Link {
   label: string;
   /** Absolute URL, `mailto:` link or in-page anchor like `#contact`. */
   url: string;
-  /** Material icon name, e.g. `mail` (see https://fonts.google.com/icons). */
-  icon?: string;
-  /** Brand icon, takes precedence over `icon`. */
-  svgIcon?: SvgIconName;
+  /** Icon from the registry in `core/icons.ts`. */
+  icon?: IconName;
 }
 
 export interface SectionBase {
@@ -44,6 +39,8 @@ export interface HeroSection extends SectionBase {
   avatar?: string;
   avatarAlt?: string;
   actions: Link[];
+  /** Show the footer's social links below the buttons. */
+  showSocials?: boolean;
 }
 
 /** A titled group of bullet points within a timeline entry, e.g. "Frontend". */
@@ -64,14 +61,16 @@ export interface ExperienceEntry {
   /** Titled groups of bullet points, shown after `highlights`. */
   sections?: ExperienceSubsection[];
   technologies?: string[];
-  /** Material icon name for the timeline marker, defaults to the section's icon, then `work`. */
-  icon?: string;
+  /** Icon for the timeline marker, defaults to the section's icon, then `work`. */
+  icon?: IconName;
 }
 
 /** Used for both the experience and the education timeline. */
 export interface TimelineSection extends SectionBase {
-  /** Default Material icon name for all entries of this timeline. */
-  icon?: string;
+  /** `alternating` places cards left and right of a centred line (default); `single` keeps the line on the left, better for long entries. */
+  layout?: 'alternating' | 'single';
+  /** Default icon for all entries of this timeline. */
+  icon?: IconName;
   entries: ExperienceEntry[];
 }
 
@@ -117,6 +116,8 @@ export interface FooterConfig {
 export interface AnimationConfig {
   showSplashAnimation: boolean;
   splashAnimationDuration: number;
+  /** Show the splash only on the first page load per browser session instead of on every load. */
+  splashOncePerSession?: boolean;
 }
 
 export interface PortfolioConfig {

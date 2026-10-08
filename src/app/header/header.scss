@@ -48,9 +48,14 @@
   font-size: 0.8rem;
   font-weight: 500;
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-text);
     text-decoration: none;
+  }
+
+  &.active {
+    color: var(--color-primary-text);
   }
 }
 
