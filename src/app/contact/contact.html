@@ -1,0 +1,9 @@
+<section class="contact" id="contact">
+  <div class="page-container">
+    <h2 class="title">{{ section.title }}</h2>
+    <p class="text muted">{{ section.text }}</p>
+    @if (section.action; as action) {
+      <a class="btn btn-primary" [href]="action.url">{{ action.label }}</a>
+    }
+  </div>
+</section>

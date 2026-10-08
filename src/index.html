@@ -34,9 +34,16 @@
   <link rel="manifest" href="/manifest.json" />
 
   <link rel="preload" href="/font/Agustina.woff2" as="font" crossorigin>
-  <link rel="preload" href="/font/Roboto-Light.woff2" as="font" crossorigin>
-  <link rel="preload" href="/font/Roboto-Regular.woff2" as="font" crossorigin>
-  <link rel="preload" href="/font/Roboto-Medium.woff2" as="font" crossorigin>
+  <link rel="preload" href="/font/Inter-Variable.woff2" as="font" crossorigin>
+
+  <script>
+    try {
+      const mode = sessionStorage.getItem('theme-mode');
+      if (mode === 'light' || mode === 'dark') {
+        document.documentElement.setAttribute('data-theme', mode)
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <app-root></app-root>

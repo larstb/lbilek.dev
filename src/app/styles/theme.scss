@@ -31,27 +31,83 @@ html {
 
   @include mat.theme((
     color: (
-      theme-type: dark,
+      theme-type: color-scheme,
       primary: map.merge(map.get($palettes, primary), mat.$blue-palette),
       use-system-variables: false
     ),
     typography: (
       use-system-variables: false,
-      brand-family: Roboto,
-      plain-family: Roboto,
+      brand-family: Inter,
+      plain-family: Inter,
     ),
     density: -2,
   ));
 }
 
-body {
-  color-scheme: dark;
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: var(--md-background);
-  color: var(--md-on-background);
+:root {
+  color-scheme: light dark;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --color-primary: light-dark(#2563eb, #3b82f6);
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 85%, black);
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 14%, transparent);
+  --color-primary-text: light-dark(
+    color-mix(in srgb, var(--color-primary) 85%, black),
+    color-mix(in srgb, var(--color-primary) 70%, white)
+  );
+  --color-on-primary: #ffffff;
+
+  --color-bg: light-dark(#f8fafc, #0f172a);
+  --color-surface: light-dark(#ffffff, #111b30);
+  --color-surface-muted: light-dark(#f1f5f9, #1e293b);
+  --color-border: light-dark(#e2e8f0, #1e293b);
+  --color-text: light-dark(#0f172a, #f8fafc);
+  --color-text-muted: light-dark(#475569, #94a3b8);
+  --color-header-bg: color-mix(in srgb, var(--color-bg) 85%, transparent);
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --header-height: 56px;
+  --content-width: 1100px;
+  --shadow-card: light-dark(0 1px 3px rgb(15 23 42 / 0.06), none);
 }
 
- html, body {
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+html,
+body {
   height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
 }

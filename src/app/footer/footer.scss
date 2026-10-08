@@ -1,0 +1,22 @@
+.footer {
+  padding: 2.5rem 0 1.5rem;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.socials mat-icon {
+  --icon-size: 18px;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.7rem;
+}

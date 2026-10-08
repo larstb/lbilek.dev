@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AnimationOptions, LottieComponent} from 'ngx-lottie';
-import {environment} from '../../../environment';
+import { portfolio } from '../config/portfolio.config';
 
 @Component({
   selector: 'app-welcome-animation',
@@ -13,17 +13,17 @@ import {environment} from '../../../environment';
 export class WelcomeAnimation implements OnInit {
   @Output() finished = new EventEmitter<void>();
 
-  protected readonly environment = environment;
-
   options: AnimationOptions = {
     path: '/animations/splash.json'
   };
 
   ngOnInit() {
-    if (environment.showSplashAnimation) {
+    if (portfolio.animation.showSplashAnimation) {
       setTimeout(() => {
         this.finished.emit();
-      }, environment.splashAnimationDuration);
+      }, portfolio.animation.splashAnimationDuration);
     }
   }
+
+  protected readonly portfolio = portfolio;
 }

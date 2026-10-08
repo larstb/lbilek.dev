@@ -1,0 +1,50 @@
+<section class="section" id="projects">
+  <div class="page-container">
+    <h2 class="section-title">{{ section.title }}</h2>
+    @if (section.subtitle) {
+      <p class="section-subtitle muted">{{ section.subtitle }}</p>
+    }
+
+    <div class="grid">
+      @for (project of section.items; track project.title) {
+        <article class="card project">
+          @if (project.image) {
+            <img class="media" [src]="project.image" [alt]="project.imageAlt ?? project.title" loading="lazy" />
+          } @else if (section.showImagePlaceholder) {
+            <div class="media placeholder" aria-hidden="true">
+              <mat-icon>code</mat-icon>
+            </div>
+          }
+
+          <div class="body">
+            <h3 class="title">{{ project.title }}</h3>
+            <p class="description muted">{{ project.description }}</p>
+
+            @if (project.tags?.length) {
+              <ul class="tags">
+                @for (tag of project.tags; track tag) {
+                  <li class="pill">{{ tag }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.links?.length) {
+              <div class="links">
+                @for (link of project.links; track link.url) {
+                  <a [href]="link.url" target="_blank" rel="noopener">
+                    @if (link.svgIcon) {
+                      <mat-icon [svgIcon]="link.svgIcon" />
+                    } @else {
+                      <mat-icon>{{ link.icon ?? 'open_in_new' }}</mat-icon>
+                    }
+                    {{ link.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

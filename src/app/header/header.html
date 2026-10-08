@@ -1,1 +1,41 @@
-<p>header works!</p>
+<header class="header">
+  <div class="page-container header-inner">
+    <a class="brand" href="#">
+      <mat-icon class="brand-logo" svgIcon="logo" aria-hidden="true" />
+      <span>{{ portfolio.name }}</span>
+    </a>
+
+    <nav class="nav" [class.open]="menuOpen()" aria-label="Main navigation" id="main-nav">
+      @for (item of navItems; track item.href) {
+        <a class="nav-link" [href]="item.href" (click)="menuOpen.set(false)">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="actions">
+      @if (showThemeToggle) {
+        <button
+          type="button"
+          class="btn-icon"
+          (click)="theme.toggle()"
+          [attr.aria-label]="themeLabel()"
+          [title]="themeLabel()"
+        >
+          <mat-icon>{{ themeIcon() }}</mat-icon>
+        </button>
+      }
+      @if (portfolio.sections.contact.enabled) {
+        <a class="btn btn-primary header-cta" [href]="'#contact'">Contact Me</a>
+      }
+      <button
+        type="button"
+        class="btn-icon menu-toggle"
+        (click)="menuOpen.set(!menuOpen())"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="main-nav"
+        aria-label="Toggle navigation"
+      >
+        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>

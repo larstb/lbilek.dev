@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="page-container">
+    @if (socials.length) {
+      <ul class="socials">
+        @for (social of socials; track social.url) {
+          <li>
+            <a class="btn-icon" [href]="social.url" [attr.target]="social.url.startsWith('http') ? '_blank' : null" rel="noopener" [attr.aria-label]="social.label" [title]="social.label">
+              @if (social.svgIcon) {
+                <mat-icon [svgIcon]="social.svgIcon" />
+              } @else {
+                <mat-icon>{{ social.icon ?? 'public' }}</mat-icon>
+              }
+            </a>
+          </li>
+        }
+      </ul>
+    }
+    <p class="copyright muted">{{ copyright }}</p>
+  </div>
+</footer>

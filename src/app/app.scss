@@ -1,6 +1,9 @@
-.wip {
-  justify-content: center;
+:host {
   display: flex;
-  margin-top: 6rem;
-  font-size: xxx-large;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
 }

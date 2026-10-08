@@ -1,0 +1,30 @@
+<section class="section hero" id="about">
+  <div class="page-container hero-inner">
+    <div class="avatar">
+      @if (hero.avatar) {
+        <img [src]="hero.avatar" [alt]="hero.avatarAlt ?? hero.name" width="480" height="480" />
+      } @else {
+        <span class="avatar-initials" aria-hidden="true">{{ initials }}</span>
+      }
+    </div>
+
+    <div class="hero-text">
+      <h1>{{ hero.greeting }} {{ hero.name }}</h1>
+      <p class="intro muted">{{ hero.intro }}</p>
+      @if (hero.actions.length) {
+        <div class="hero-actions">
+          @for (action of hero.actions; track action.url; let first = $first) {
+            <a class="btn" [class.btn-primary]="first" [class.btn-outline]="!first" [href]="action.url">
+              @if (action.svgIcon) {
+                <mat-icon [svgIcon]="action.svgIcon" />
+              } @else if (action.icon) {
+                <mat-icon>{{ action.icon }}</mat-icon>
+              }
+              {{ action.label }}
+            </a>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

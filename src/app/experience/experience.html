@@ -1,0 +1,61 @@
+@let s = section();
+<section class="section" [id]="sectionId()">
+  <div class="page-container">
+    <h2 class="section-title">{{ s.title }}</h2>
+    @if (s.subtitle) {
+      <p class="section-subtitle muted">{{ s.subtitle }}</p>
+    }
+
+    <ol class="timeline">
+      @for (entry of s.entries; track $index; let odd = $odd) {
+        <li class="timeline-item" [class.left]="odd">
+          <span class="marker">
+            <mat-icon>{{ entry.icon ?? s.icon ?? 'work' }}</mat-icon>
+          </span>
+
+          <article class="card entry">
+            <p class="period muted">{{ entry.period }}</p>
+            <h3 class="role">{{ entry.role }}</h3>
+            <p class="company muted">
+              @if (entry.companyUrl) {
+                <a [href]="entry.companyUrl" target="_blank" rel="noopener">{{ entry.company }}</a>
+              } @else {
+                {{ entry.company }}
+              }
+              @if (entry.location) {
+                <span> · {{ entry.location }}</span>
+              }
+            </p>
+            @if (entry.description) {
+              <p class="description muted">{{ entry.description }}</p>
+            }
+            @if (entry.highlights?.length) {
+              <ul class="highlights muted">
+                @for (highlight of entry.highlights; track highlight) {
+                  <li>{{ highlight }}</li>
+                }
+              </ul>
+            }
+            @for (sub of entry.sections; track sub.title) {
+              <div class="subsection">
+                <h4 class="subsection-title">{{ sub.title }}</h4>
+                <ul class="highlights muted">
+                  @for (highlight of sub.highlights; track highlight) {
+                    <li>{{ highlight }}</li>
+                  }
+                </ul>
+              </div>
+            }
+            @if (entry.technologies?.length) {
+              <ul class="tech">
+                @for (tech of entry.technologies; track tech) {
+                  <li class="pill">{{ tech }}</li>
+                }
+              </ul>
+            }
+          </article>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

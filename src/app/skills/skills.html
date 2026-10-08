@@ -1,0 +1,26 @@
+<section class="section" id="skills">
+  <div class="page-container">
+    <h2 class="section-title">{{ section.title }}</h2>
+    @if (section.subtitle) {
+      <p class="section-subtitle muted">{{ section.subtitle }}</p>
+    }
+
+    <div [class.cards]="asCards">
+      @for (group of section.groups; track $index) {
+        <div class="group" [class.card]="asCards">
+          @if (group.name) {
+            <h3 class="group-name">{{ group.name }}</h3>
+          }
+          @if (group.description) {
+            <p class="group-description muted">{{ group.description }}</p>
+          }
+          <ul class="skills">
+            @for (skill of group.skills; track skill) {
+              <li class="pill">{{ skill }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
