@@ -5,6 +5,7 @@ import { Header } from './header/header';
 import { Hero } from './hero/hero';
 import { Experience } from './experience/experience';
 import { Skills } from './skills/skills';
+import { Community } from './community/community';
 import { Projects } from './projects/projects';
 import { Contact } from './contact/contact';
 import { Footer } from './footer/footer';
@@ -14,7 +15,7 @@ const SPLASH_SHOWN_KEY = 'splash-shown';
 
 @Component({
   selector: 'app-root',
-  imports: [WelcomeAnimation, Header, Hero, Experience, Skills, Projects, Contact, Footer, RevealDirective],
+  imports: [WelcomeAnimation, Header, Hero, Experience, Skills, Community, Projects, Contact, Footer, RevealDirective],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

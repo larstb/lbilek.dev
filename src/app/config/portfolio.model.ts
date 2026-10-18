@@ -3,7 +3,7 @@ import { IconName } from '../core/icons';
 export type ThemeMode = 'light' | 'dark';
 
 /** Ids of the sections that can be rendered on the page (also used as anchor ids). */
-export type SectionId = 'about' | 'experience' | 'education' | 'skills' | 'projects' | 'contact';
+export type SectionId = 'about' | 'experience' | 'education' | 'skills' | 'community' | 'projects' | 'contact';
 
 export interface Link {
   label: string;
@@ -86,6 +86,22 @@ export interface SkillsSection extends SectionBase {
   groups: SkillGroup[];
 }
 
+/** A card in the community section, e.g. mentoring or tutoring. */
+export interface CommunityItem {
+  title: string;
+  text: string;
+  icon?: IconName;
+  tags?: string[];
+}
+
+export interface CommunitySection extends SectionBase {
+  /** Highlighted headline shown as a quote above the story. */
+  quote?: string;
+  /** Paragraphs of the personal story. */
+  story: string[];
+  items: CommunityItem[];
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -131,6 +147,7 @@ export interface PortfolioConfig {
     experience: TimelineSection;
     education: TimelineSection;
     skills: SkillsSection;
+    community: CommunitySection;
     projects: ProjectsSection;
     contact: ContactSection;
   };

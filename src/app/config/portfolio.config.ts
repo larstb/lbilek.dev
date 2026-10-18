@@ -13,7 +13,7 @@ export const portfolio: PortfolioConfig = {
     showToggle: true,
   },
 
-  sectionOrder: ['about', 'experience', 'education', 'skills', 'projects', 'contact'],
+  sectionOrder: ['about', 'experience', 'education', 'skills', 'community', 'projects', 'contact'],
 
   sections: {
     about: {
@@ -39,16 +39,25 @@ export const portfolio: PortfolioConfig = {
       layout: 'single',
       entries: [
         {
-          role: 'Full-Stack Developer',
+          role: 'Full-Stack Developer & Frontend Architect',
           company: 'RISE GmbH',
           period: '04/2023 - Present',
           description:
             'Building software solutions for the eHealth sector, with a focus on modern web development and automation.',
           sections: [
             {
-              title: 'Healthcare Application',
+              title: 'Architecture & Leadership',
               highlights: [
-                'Leading the frontend development with Angular and TypeScript',
+                'Frontend architect across multiple projects, defining architecture, conventions and shared standards',
+                'Leading a small frontend team: planning, task distribution and mentoring',
+                'Frontend code reviews to keep quality and consistency high across the codebase',
+                'Running technical refinements to turn requirements into well-defined, implementable stories',
+              ],
+            },
+            {
+              title: 'Healthcare Applications',
+              highlights: [
+                'Developing the frontend with Angular and TypeScript',
                 'Implementing backend services with Java and Spring Boot',
               ],
             },
@@ -147,6 +156,45 @@ export const portfolio: PortfolioConfig = {
           name: 'DevOps & Tools',
           description: 'Automating builds, tests and deployments',
           skills: ['Docker', 'Kubernetes', 'Helm', 'DevOps', 'Git'],
+        },
+      ],
+    },
+
+    community: {
+      enabled: true,
+      title: 'Community & Mentoring',
+      subtitle: 'Helping young people find their way into IT and working life',
+      navLabel: 'Community',
+      quote: 'Never stand still - IT always offers something new to learn.',
+      story: [
+        'IT has fascinated me since childhood, from tinkering with computers alongside my grandfather to my first own PC ' +
+          'running Windows XP. The question "How does this actually work?" has driven me ever since. At 16 I started my ' +
+          'IT apprenticeship, added the Matura through evening classes and graduated with honors.',
+        'My advice to young talents: anyone with a passion for technology and a good sense of logic can become a ' +
+          'successful developer and a computer science degree is not a requirement. Stay curious, experiment and keep learning.',
+      ],
+      items: [
+        {
+          title: 'Mentoring Young Talents',
+          icon: 'groups',
+          text:
+            'I share my path from apprentice to developer and architect with young people starting out in IT, ' +
+            'and show them that there is more than one way into the industry.',
+        },
+        {
+          title: 'Social Engagement',
+          icon: 'volunteer',
+          text:
+            "I'm involved in social and community organizations, supporting young people as they start their working life " +
+            'and helping them find their way.',
+        },
+        {
+          title: 'Tutoring',
+          icon: 'code',
+          text:
+            'I tutor students and apprentices in Java, full-stack development and databases, ' +
+            'from first programming steps to building complete applications.',
+          tags: ['Java', 'Full Stack', 'Databases'],
         },
       ],
     },

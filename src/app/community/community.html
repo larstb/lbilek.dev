@@ -1,0 +1,36 @@
+<section class="section" id="community">
+  <div class="page-container">
+    <h2 class="section-title">{{ section.title }}</h2>
+    @if (section.subtitle) {
+      <p class="section-subtitle muted">{{ section.subtitle }}</p>
+    }
+
+    <div class="story">
+      @if (section.quote) {
+        <blockquote class="quote">{{ section.quote }}</blockquote>
+      }
+      @for (paragraph of section.story; track $index) {
+        <p class="muted">{{ paragraph }}</p>
+      }
+    </div>
+
+    <ul class="items">
+      @for (item of section.items; track item.title) {
+        <li class="card item">
+          @if (item.icon) {
+            <span class="icon"><mat-icon [svgIcon]="item.icon" /></span>
+          }
+          <h3 class="item-title">{{ item.title }}</h3>
+          <p class="item-text muted">{{ item.text }}</p>
+          @if (item.tags?.length) {
+            <ul class="tags">
+              @for (tag of item.tags; track tag) {
+                <li class="pill">{{ tag }}</li>
+              }
+            </ul>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>
